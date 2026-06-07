@@ -325,10 +325,13 @@
   .contact-item .ci-icon { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, rgba(194,127,127,0.15), rgba(152,100,166,0.15)); display:flex; align-items:center; justify-content:center; font-size: 1.2rem; flex-shrink: 0; }
   .contact-item .ci-text { flex: 1; }
   .contact-item .ci-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
-  .contact-item .ci-val { font-size: 0.92rem; color: var(--text); }
+  .contact-item .ci-val { font-size: 0.92rem; color: var(--text); word-break: break-word; overflow-wrap: break-word; }
   .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  @media(max-width: 480px) {
+    .form-row { grid-template-columns: 1fr; gap: 1rem; }
+  }
   .form-group label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
   .form-group input, .form-group textarea {
     background: var(--card-bg); backdrop-filter: blur(10px);
@@ -382,7 +385,29 @@
   @media(max-width: 600px) {
     section { padding: 5rem 6vw; }
     .projects-grid { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: repeat(3,1fr); }
+    .skills-grid { grid-template-columns: repeat(2,1fr); }
+    .skill-card { padding: 1.5rem 1rem; }
+    .contact-grid { gap: 3rem; }
+    .contact-info { gap: 1rem; }
+    .contact-item .ci-val { font-size: 0.8rem; word-break: break-word; }
+    .form-group input, .form-group textarea { padding: 0.8rem 1rem; font-size: 0.85rem; }
+  }
+  @media(max-width: 480px) {
+    section { padding: 4rem 5vw; }
+    .section-title { font-size: clamp(1.5rem, 5vw, 3rem); }
+    .section-sub { font-size: 0.9rem; }
+    .skills-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .skill-card { padding: 1.2rem 0.8rem; }
+    .skill-card h4 { font-size: 0.75rem; }
+    .skill-card i { width: 56px; height: 56px; font-size: 1.8rem; }
+    .contact-item { padding: 0.9rem; gap: 0.8rem; }
+    .contact-item .ci-icon { width: 40px; height: 40px; font-size: 1rem; }
+    .contact-item .ci-label { font-size: 0.65rem; }
+    .contact-item .ci-val { font-size: 0.75rem; word-break: break-all; overflow-wrap: break-word; }
+    .contact-item span { font-size: 0.9rem; }
+    .form-group input, .form-group textarea { padding: 0.8rem 1rem; font-size: 0.85rem; }
+    .form-submit { padding: 0.85rem 2rem; font-size: 0.75rem; }
+    .hero-badge { right: 0; bottom: 20px; width: auto; }
   }
 
   /* ── SCROLL TO TOP ── */
@@ -881,13 +906,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Shrinithi<span>.</span></div>
-  <p class="footer-copy">© 2026 Shrinithi — Crafted with care &amp; coffee</p>
+  <div class="footer-logo">Shrinithi<span></span></div>
+  <p class="footer-copy">© 2026 Shrinithi-Crafting digital experiences with purpose</p>
   <div class="footer-socials">
-    <a href="#" title="LinkedIn">in</a>
-    <a href="#" title="GitHub">⌥</a>
-    <a href="#" title="Instagram">◎</a>
-    <a href="#" title="Dribbble">●</a>
+    <a href="https://www.linkedin.com/in/shrinithi-b-43819a372/" target="_blank" rel="noopener" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="https://wa.me/916380618076" target="_blank" rel="noopener" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
   </div>
 </footer>
 
